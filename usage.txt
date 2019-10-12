@@ -1,0 +1,38 @@
+[1] pr_mode
+0: Read files from folder and save to a list text file
+1: Read files from list text file and execute 
+
+Texter:
+--fldPre <folder/>: Folder prefix "folder"
+--flStr <string>: Include files with "string" in their names
+--ext <.ext>: extension "ext" of the files to be listed 
+
+Preprocess:
+--slice: Slice surface mesh 
+
+Parameterization:
+--sPI <n>: perform iterative parameterization for maximum of n iterations
+--m2G <im>: obtain geometry image of size imxim from parameterized mesh
+--G2o: remesh pointcloud from geometry image
+
+Example usage:
+# List all the files in off folder
+./Main 0 ./Example/off.txt --ext .off --fldPre off
+
+# Slice the meshes
+./Main 1 ./Example/off.txt --slice --fldPre slice/
+
+# List the slices
+./Main 0 ./Example/slice.txt --ext .off
+
+# Parameterize the sliced mesh
+./Main 1 ./Example/slice.txt --sPI 50 --fldPre sPI/ --m2G 128 --useNormal
+
+# List the geometry images
+./Main 0 ./Example/GI.txt --ext .png --flStr _flatGI --fldPre sPI/
+
+# Remesh from the geometry images
+./Main 1 ./Example/GI.txt --G2o --fldPre remesh/ 
+
+
+

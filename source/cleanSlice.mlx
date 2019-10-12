@@ -1,0 +1,12 @@
+<!DOCTYPE FilterScript>
+<FilterScript>
+ <filter name="Remove Duplicate Faces"/>
+ <filter name="Remove Zero Area Faces"/>
+ <filter name="Remove Unreferenced Vertices"/>
+ <filter name="Remove Duplicate Vertices"/>
+ <filter name="Remove Faces from Non Manifold Edges"/>
+ <filter name="Select non Manifold Edges "/>
+ <filter name="Select non Manifold Vertices"/>
+ <filter name="Delete Selected Faces and Vertices"/>
+ <filter name="Remove Unreferenced Vertices"/>
+</FilterScript>

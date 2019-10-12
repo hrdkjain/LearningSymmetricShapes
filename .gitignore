@@ -1,0 +1,14 @@
+/build/
+/CMakeFiles/
+/Testing/
+/.csettings/
+/.settings/
+**/CMakeCache.txt
+**/.cproject
+**/.project
+*.cmake
+*.tcl
+*.out
+Makefile
+Main
+
