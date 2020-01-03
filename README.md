@@ -17,9 +17,13 @@ Code for Parameterization has been written in C++ and requires:
 - Boost
 - OpenCV
 
-Deep network code requires:
-- python 
-- Tensorflow (1.12).
+Deep network code is based on Tensorflow and is tested on Ubuntu with:
+- python (3.5.2)
+- tensorflow-gpu (1.14)
+- scikit-image (0.15.0)
+- numpy (1.16.5)
+- natsort
+- tqdm
 
 ## Usage
 ### Part I: Parameterization
@@ -29,9 +33,10 @@ Code contains functionality for:
 - Compute Geometry Image (of size **_im_**) from the parameterized representation (--m2G **_im_**)
 - Remesh point cloud from Geometry Image (--G2o)
 
-### Part II: Learning Shapes (Coming soon)
+### Part II: Learning Shapes
 python based functionality which contains:
 - generating curvature mask from normalGI
 - tensorflow model
-- python scripts to train and test the model
-- model trained on airplanes and cars
+- docker image
+- python scripts to train and test (Coming soon) the model
+- model trained on airplanes and cars (Coming soon)

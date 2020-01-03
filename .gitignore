@@ -12,3 +12,7 @@
 Makefile
 Main
 
+**/__pycache__/
+__init__.py
+/python/.idea/
+/python/log/
