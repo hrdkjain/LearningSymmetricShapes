@@ -38,5 +38,5 @@ python based functionality which contains:
 - generating curvature mask from normalGI
 - tensorflow model
 - docker image
-- python scripts to train and test (Coming soon) the model
-- model trained on airplanes and cars (Coming soon)
+- python scripts to train and test the model
+- trained airplane and car models (https://www.dropbox.com/sh/3lkfj03c1kmbs8u/AAAnbvxsarmWJ9fkiB4CtREra?dl=0)
