@@ -31,4 +31,4 @@ for i in range(len(rgb_imgs)):
     if isinstance(out, dict):
         slice1 = np.reshape(out['prediction'],[params['gi_size']*params['gi_size'],3])
         slice2 = slice1 * reflector
-        utils.writeOff(rgb_imgs[i].replace('.png','.off'), np.concatenate((slice1,slice2),axis=0))
+        utils.writeOff(rgb_imgs[i].replace('.png','.off'), np.concatenate((slice1,slice2),axis=0), params['gi_size'], False)
