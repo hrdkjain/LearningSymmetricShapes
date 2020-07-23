@@ -16,3 +16,6 @@ Main
 __init__.py
 /python/.idea/
 /python/log/
+/.idea/
+/Example/
+/log*

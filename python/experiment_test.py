@@ -7,16 +7,20 @@ from models.predict import predict
 import numpy as np
 
 params = {}
-params['model_dir'] = './savedModel/LSS_airplane'
-params['checkpoint'] = '35424'
+params['model'] = 'airplane' #car
+params['model_dir'] = './savedModel/LSS_' + params['model']
+params['checkpoint'] = '35424' #14850
 params['rgb_size'] = 128
 params['gi_size'] = 128
+params['tst_dir'] = 'tst_rgb'
 
 checkpointPath = os.path.join(params['model_dir'], 'model.ckpt-' + params['checkpoint'])
-rgb_imgs = ['tst_rgb/airplane_2.png',
-            'tst_rgb/airplane_4.png',
-            'tst_rgb/airplane_5.png',
-            'tst_rgb/airplane_7.png']
+
+rgb_imgs = []
+for f in os.listdir(params['tst_dir']):
+    if params['model'] in f and f.endswith('.png'):
+        rgb_imgs.append(os.path.join(params['tst_dir'],f))
+
 params['batch_size'] = len(rgb_imgs)
 
 # Compute output of the model by specifying input rgb image
