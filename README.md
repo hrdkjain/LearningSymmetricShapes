@@ -1,6 +1,8 @@
 # Learning Symmetric Shapes
 This project is based on the workshop paper ["Learning to Reconstruct Symmetric Shapes using Planar Parameterization of 3D Surface"](https://www.researchgate.net/publication/335528865_Learning_to_Reconstruct_Symmetric_Shapes_using_Planar_Parameterization_of_3D_Surface). First part of this project deals with parameterization and second deals with learning of shapes from geometry images. 
 
+![teaser](Images/teaser.png)
+
 ## Citation
 If you find this project useful in your work, please consider citing:
 
