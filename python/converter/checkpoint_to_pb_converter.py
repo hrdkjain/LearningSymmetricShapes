@@ -1,5 +1,7 @@
 import tensorflow.compat.v1 as tf
 import os
+import sys
+sys.path.append('..')
 from models.autoencoder_128_128_3 import model_fn
 
 # this script is tested on tensorflow version 2.2 and may not work on older/newer versions
@@ -7,13 +9,12 @@ from models.autoencoder_128_128_3 import model_fn
 tf.disable_v2_behavior()
 
 params = {}
-# params['model_dir'] = './savedModel/LSS_airplane'
-# params['checkpoint'] = '35424'
-# params['output_dir'] = 'pbLSSAirplaneModel'
+params['model_dir'] = '../savedModel/LSS_airplane'
+params['checkpoint'] = '35424'
 
-params['model_dir'] = './savedModel/LSS_car'
-params['checkpoint'] = '14850'
-params['output_dir'] = 'pbLSSCarModel2'
+# params['model_dir'] = '../savedModel/LSS_car'
+# params['checkpoint'] = '14850'
+params['pb_model_dir'] = os.path.join(params['model_dir'],'pb')
 
 checkpoint_path = os.path.join(params['model_dir'], 'model.ckpt-' + params['checkpoint'])
 
@@ -30,4 +31,4 @@ def serving_input_receiver_fn():
     }
     return tf.estimator.export.ServingInputReceiver(features, features)
 
-network.export_saved_model(params['output_dir'], serving_input_receiver_fn, checkpoint_path=checkpoint_path)
+network.export_saved_model(params['pb_model_dir'], serving_input_receiver_fn, checkpoint_path=checkpoint_path)
