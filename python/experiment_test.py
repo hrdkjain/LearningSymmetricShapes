@@ -5,6 +5,7 @@ from data import utils
 from models.autoencoder_128_128_3 import model_fn
 from models.predict import predict
 import numpy as np
+import scipy.ndimage
 
 params = {}
 params['model'] = 'airplane' #car
@@ -15,6 +16,13 @@ params['gi_size'] = 128
 params['tst_dir'] = 'tst_rgb'
 
 checkpointPath = os.path.join(params['model_dir'], 'model.ckpt-' + params['checkpoint'])
+
+def postprocess(out):
+    # k = np.array([[1/9,1/9,1/9],[1/9,1/9,1/9],[1/9,1/9,1/9]])
+    for i in range(3):
+        # out[:,:,i] = scipy.ndimage.convolve(out[:,:,i], k, mode = 'mirror')
+        out[:, :, i] = scipy.ndimage.median_filter(out[:, :, i], 3, mode = 'mirror')
+    return out
 
 rgb_imgs = []
 for f in os.listdir(params['tst_dir']):
@@ -33,6 +41,8 @@ reflector = np.array([1,1,-1])
 for i in range(len(rgb_imgs)):
     out = next(prediction)
     if isinstance(out, dict):
-        slice1 = np.reshape(out['prediction'],[params['gi_size']*params['gi_size'],3])
+        output = postprocess(out['prediction'])
+        slice1 = np.reshape(output,[params['gi_size']*params['gi_size'],3])
         slice2 = slice1 * reflector
-        utils.writeOff(rgb_imgs[i].replace('.png','.off'), np.concatenate((slice1,slice2),axis=0), params['gi_size'], False)
+        utils.writeOff(rgb_imgs[i].replace('.png','.off'), np.concatenate((slice1,slice2),axis=0), params['gi_size'], True)
+
