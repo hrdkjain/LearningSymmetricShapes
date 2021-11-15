@@ -19,6 +19,5 @@ __init__.py
 /.idea/
 /Example/
 /log*
-/python/savedModel/
 *.off
 runDocker.sh

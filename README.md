@@ -1,17 +1,10 @@
 # Learning Symmetric Shapes
-This project is based on the workshop paper ["Learning to Reconstruct Symmetric Shapes using Planar Parameterization of 3D Surface"](https://www.researchgate.net/publication/335528865_Learning_to_Reconstruct_Symmetric_Shapes_using_Planar_Parameterization_of_3D_Surface). First part of this project deals with parameterization and second deals with learning of shapes from geometry images. 
+
+In this work, we propose an efficient iterative planar parameterization for disk topology shapes. The parameterization is used as a tool to regularize the mesh onto a square grid and encoded with vertex position. The resultant encoding is an image with rgb denoting xyz positions on the mesh.
+
+The ICCV workshop paper can be found [here](https://openaccess.thecvf.com/content_ICCVW_2019/papers/GMDL/Jain_Learning_to_Reconstruct_Symmetric_Shapes_using_Planar_Parameterization_of_3D_ICCVW_2019_paper.pdf). First part of this project deals with parameterization and second deals with learning of shapes from geometry images. 
 
 ![teaser](Images/teaser.png)
-
-## Citation
-If you find this project useful in your work, please consider citing:
-
-    @inproceedings{jain2019learning,
-      title={Learning to Reconstruct Symmetric Shapes using Planar Parameterization of 3D Surface},
-      author={Jain, Hardik and Wöllhaf, Manuel and Hellwich, Olaf},
-      booktitle={The IEEE International Conference on Computer Vision (ICCV) Workshops},
-      year={2019}
-    }
 
 ## Installation
 Code for Parameterization has been written in C++ and requires:
@@ -41,4 +34,14 @@ python based functionality which contains:
 - tensorflow model
 - docker image
 - python scripts to train and test the model
-- trained airplane and car models (https://www.dropbox.com/sh/3lkfj03c1kmbs8u/AAAnbvxsarmWJ9fkiB4CtREra?dl=0)
+
+## Citation
+If you find this project useful in your work, please consider citing:
+
+    @inproceedings{jain2019learning,
+      title={Learning to Reconstruct Symmetric Shapes using Planar Parameterization of 3D Surface},
+      author={Jain, Hardik and Wöllhaf, Manuel and Hellwich, Olaf},
+      booktitle={The IEEE International Conference on Computer Vision (ICCV) Workshops},
+      year={2019}
+    }
+

@@ -1,3 +1,0 @@
-- Download saved Model from https://www.dropbox.com/sh/3lkfj03c1kmbs8u/AAAnbvxsarmWJ9fkiB4CtREra?dl=0
-- Unzip the savedModel in python directory
-- Saved Model folder should look like LearningSymmetricShapes/python/savedModel/LSS_airplane
